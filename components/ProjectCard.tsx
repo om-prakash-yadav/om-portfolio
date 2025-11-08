@@ -45,7 +45,7 @@ export default function ProjectCard({
     return (
         <div
             onClick={onClick}
-            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 h-[280px] md:h-[320px]"
+            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 min-h-[350px] md:h-[320px]"
             style={{
                 ...(isDarkMode ? lightShadow : darkShadow),
                 background: `radial-gradient(circle at 50% 0%, ${gradient})`,
@@ -58,9 +58,9 @@ export default function ProjectCard({
             <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch p-6 gap-6">
                 {/* Left side - Text content */}
                 <div className="flex-1 flex flex-col justify-between text-white">
-                    <div>
+                    <div className="flex-grow">
                         <h2 className="text-2xl md:text-3xl font-bold mb-3">{title}</h2>
-                        <p className="text-sm md:text-base text-white/90 leading-relaxed line-clamp-4"
+                        <p className="text-sm md:text-base text-white/90 leading-relaxed"
                            dangerouslySetInnerHTML={{
                                __html: description.replace(/160\+/g, '<span class="font-bold text-yellow-300">160+</span>')
                            }}
@@ -68,7 +68,7 @@ export default function ProjectCard({
                     </div>
 
                     {/* Tech stack at bottom */}
-                    <div className="flex gap-2 mt-4 flex-wrap">
+                    <div className="flex gap-2 mt-6 flex-wrap">
                         {techStack.map((tech, index) => (
                             <div
                                 key={index}
