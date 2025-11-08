@@ -95,7 +95,7 @@ export default function Experience() {
   return (
     <div className={`${jetbrainsMono.className} w-full`}>
       {/* Professional Experience Section */}
-      <section id="experience" className="w-full max-w-6xl px-6 py-16 md:py-24 mx-auto">
+      <section id="experience" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
           <h1 className="text-4xl md:text-6xl text-center font-bold">
             Experience
@@ -126,7 +126,7 @@ export default function Experience() {
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${exp.color} rounded-t-2xl`}></div>
                     
-                    <div className="flex items-start gap-4 mb-4 group-hover:mb-6 transition-all duration-500">
+                    <div className="flex items-start gap-4 mb-4 md:group-hover:mb-6 transition-all duration-500">
                       {exp.logo ? (
                         <div className="p-2 group-hover:p-3 rounded-xl flex items-center justify-center min-w-[50px] group-hover:min-w-[60px] h-[50px] group-hover:h-[60px] transition-all duration-500">
                           <img
@@ -146,7 +146,7 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 group-hover:gap-4 mb-0 group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
+                    <div className="flex flex-wrap gap-3 mb-6 md:mb-0 md:group-hover:gap-4 md:group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
                       <span className="flex items-center gap-1.5 px-2.5 py-1 group-hover:px-3 group-hover:py-1.5 rounded-lg bg-muted/50 transition-all duration-500">
                         <Calendar className="w-3.5 h-3.5 group-hover:w-4 group-hover:h-4 transition-all duration-500" />
                         {exp.duration}
@@ -158,7 +158,7 @@ export default function Experience() {
                     </div>
 
                     {/* Hidden content on hover */}
-                    <div className="max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                    <div className="max-h-[500px] opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-[500px] md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                       <ul className="space-y-3 mb-6 text-sm text-muted-foreground leading-relaxed">
                         {exp.responsibilities.map((resp, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -191,7 +191,7 @@ export default function Experience() {
       </section>
 
       {/* Co-Curricular Activities Section */}
-      <section id="activities" className="w-full max-w-6xl px-6 py-16 md:py-24 mx-auto">
+      <section id="activities" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
           <h1 className="text-4xl md:text-6xl text-center font-bold">
             Co-Curricular Activities
@@ -222,7 +222,7 @@ export default function Experience() {
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${activity.color} rounded-t-2xl`}></div>
                     
-                    <div className="flex items-start gap-4 mb-4 group-hover:mb-6 transition-all duration-500">
+                    <div className="flex items-start gap-4 mb-4 md:group-hover:mb-6 transition-all duration-500">
                       {activity.logo ? (
                         <div className="p-2 group-hover:p-3 rounded-xl bg-white dark:bg-gray-100 border border-border flex items-center justify-center min-w-[50px] group-hover:min-w-[60px] h-[50px] group-hover:h-[60px] transition-all duration-500">
                           <img
@@ -243,7 +243,7 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 group-hover:gap-4 mb-0 group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
+                    <div className="flex flex-wrap gap-3 mb-6 md:mb-0 md:group-hover:gap-4 md:group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
                       <span className="flex items-center gap-1.5 px-2.5 py-1 group-hover:px-3 group-hover:py-1.5 rounded-lg bg-muted/50 transition-all duration-500">
                         <Calendar className="w-3.5 h-3.5 group-hover:w-4 group-hover:h-4 transition-all duration-500" />
                         {activity.duration}
@@ -255,7 +255,7 @@ export default function Experience() {
                     </div>
 
                     {/* Hidden content on hover */}
-                    <div className="max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                    <div className="max-h-[500px] opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-[500px] md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                       <ul className="space-y-3 mb-6 text-sm text-muted-foreground leading-relaxed">
                         {activity.responsibilities.map((resp, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -288,7 +288,7 @@ export default function Experience() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="w-full max-w-6xl px-6 py-16 md:py-24 mx-auto">
+      <section id="education" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
           <h1 className="text-4xl md:text-6xl text-center font-bold">
             Education
@@ -319,7 +319,7 @@ export default function Experience() {
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${edu.color} rounded-t-2xl`}></div>
                     
-                    <div className="flex items-start gap-4 mb-4 group-hover:mb-6 transition-all duration-500">
+                    <div className="flex items-start gap-4 mb-4 md:group-hover:mb-6 transition-all duration-500">
                       {edu.logo ? (
                         <div className="p-2 group-hover:p-3 rounded-xl bg-white dark:bg-gray-100 border border-border flex items-center justify-center min-w-[50px] group-hover:min-w-[60px] h-[50px] group-hover:h-[60px] transition-all duration-500">
                           <img
@@ -339,7 +339,7 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 group-hover:gap-4 mb-0 group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
+                    <div className="flex flex-wrap gap-3 mb-6 md:mb-0 md:group-hover:gap-4 md:group-hover:mb-6 text-sm text-muted-foreground transition-all duration-500">
                       <span className="flex items-center gap-1.5 px-2.5 py-1 group-hover:px-3 group-hover:py-1.5 rounded-lg bg-muted/50 transition-all duration-500">
                         <Calendar className="w-3.5 h-3.5 group-hover:w-4 group-hover:h-4 transition-all duration-500" />
                         {edu.duration}
@@ -351,7 +351,7 @@ export default function Experience() {
                     </div>
 
                     {/* Hidden content on hover */}
-                    <div className="max-h-0 opacity-0 group-hover:max-h-[500px] group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                    <div className="max-h-[500px] opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-[500px] md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                       <ul className="space-y-3 text-sm text-muted-foreground leading-relaxed">
                         {edu.details.map((detail, idx) => (
                           <li key={idx} className="flex items-start gap-3">

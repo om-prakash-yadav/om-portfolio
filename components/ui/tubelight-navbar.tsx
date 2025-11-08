@@ -20,6 +20,7 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name);
   const [isMobile, setIsMobile] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   // Track screen size
   useEffect(() => {
@@ -32,6 +33,9 @@ export function NavBar({ items, className }: NavBarProps) {
   // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
+      // Skip scroll tracking if user is manually scrolling via click
+      if (isScrolling) return;
+
       const scrollY = window.scrollY + 120; // offset for navbar height
 
       for (let i = items.length - 1; i >= 0; i--) {
@@ -48,7 +52,7 @@ export function NavBar({ items, className }: NavBarProps) {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // initialize on load
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [items]);
+  }, [items, isScrolling]);
 
   return (
     <div
@@ -69,18 +73,26 @@ export function NavBar({ items, className }: NavBarProps) {
               onClick={(e) => {
                 e.preventDefault();
                 setActiveTab(item.name);
+                setIsScrolling(true);
                 
                 const targetId = item.url.replace("#", "");
                 const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
-                  const navbarHeight = 100; // Adjust this value based on your navbar height
+                  // Use different offset for contact section to scroll more
+                  const isContactSection = targetId === "contact";
+                  const navbarHeight = isContactSection ? 50 : 100;
                   const targetPosition = targetElement.offsetTop - navbarHeight;
                   
                   window.scrollTo({
                     top: targetPosition,
                     behavior: "smooth"
                   });
+
+                  // Re-enable scroll tracking after smooth scroll completes
+                  setTimeout(() => {
+                    setIsScrolling(false);
+                  }, 1000);
                 }
               }}
               className={cn(

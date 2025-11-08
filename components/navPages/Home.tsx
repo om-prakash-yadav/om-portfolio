@@ -25,7 +25,7 @@ export function Home() {
     
 
     return (
-        <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-42 pb-65 sm:min-h-screen relative">
+        <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-20 pb-16 md:pt-32 md:pb-24 sm:min-h-screen relative">
             <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 w-full max-w-5xl">
                 <div className="flex-1">
                     <div className="flex items-center gap-3 flex-wrap">
