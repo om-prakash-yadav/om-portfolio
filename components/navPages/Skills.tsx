@@ -1,7 +1,7 @@
 "use client";
-import { FaGitAlt, FaGithub, FaReact, FaAngular, FaSass, FaFigma, FaBootstrap } from "react-icons/fa";
+import { FaGitAlt, FaGithub, FaReact, FaAngular, FaSass, FaFigma, FaBootstrap, FaNodeJs } from "react-icons/fa";
 import { RiCss3Fill, RiHtml5Fill, RiTailwindCssFill, RiNextjsFill, RiFlutterFill } from "react-icons/ri";
-import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable } from "react-icons/si";
+import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable, SiMongodb, SiExpress, SiMongoose } from "react-icons/si";
 import { TbApi, TbBrandReactNative } from "react-icons/tb";
 import SkillCard from "../SkillCard";
 import { jetbrainsMono } from "@/app/font";
@@ -17,12 +17,22 @@ const skillCategories = [
         ]
     },
     {
-        title: "Frameworks & Libraries",
+        title: "Frontend Frameworks",
         skills: [
             { name: "React.js", icon: <FaReact />, hoverColor: "group-hover:text-cyan-300" },
             { name: "Angular", icon: <FaAngular />, hoverColor: "group-hover:text-red-600" },
             { name: "Next.js", icon: <RiNextjsFill />, hoverColor: "group-hover:text-black dark:group-hover:text-white" },
             { name: "Redux", icon: <SiRedux />, hoverColor: "group-hover:text-purple-500" },
+        ]
+    },
+    {
+        title: "Backend & Database",
+        skills: [
+            { name: "Node.js", icon: <FaNodeJs />, hoverColor: "group-hover:text-green-600" },
+            { name: "Express.js", icon: <SiExpress />, hoverColor: "group-hover:text-gray-600 dark:group-hover:text-white" },
+            { name: "MongoDB", icon: <SiMongodb />, hoverColor: "group-hover:text-green-500" },
+            { name: "Mongoose", icon: <SiMongoose />, hoverColor: "group-hover:text-red-800" },
+            { name: "REST APIs", icon: <TbApi />, hoverColor: "group-hover:text-blue-400" },
         ]
     },
     {
@@ -42,14 +52,12 @@ const skillCategories = [
         ]
     },
     {
-        title: "Tools & Others",
+        title: "Tools & Build Systems",
         skills: [
             { name: "Git", icon: <FaGitAlt />, hoverColor: "group-hover:text-orange-600" },
             { name: "GitHub", icon: <FaGithub />, hoverColor: "group-hover:text-gray-500" },
-            { name: "REST APIs", icon: <TbApi />, hoverColor: "group-hover:text-blue-400" },
             { name: "Webpack", icon: <SiWebpack />, hoverColor: "group-hover:text-blue-500" },
             { name: "Vite", icon: <SiVite />, hoverColor: "group-hover:text-purple-400" },
-            { name: "Node.js", icon: <SiNodedotjs />, hoverColor: "group-hover:text-green-600" },
         ]
     }
 ];
