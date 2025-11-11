@@ -16,6 +16,7 @@ interface ProjectModalProps {
   gradient: string;
   github: string;
   live: string;
+  isMobileApp?: boolean;
   onClose: () => void;
 }
 
@@ -28,6 +29,7 @@ export default function ProjectModal({
   gradient,
   github,
   live,
+  isMobileApp = false,
   onClose,
 }: ProjectModalProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -96,11 +98,15 @@ export default function ProjectModal({
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed">{description}</p>
 
           {/* Image Carousel */}
-          <div className="relative w-full min-h-[180px] sm:min-h-[320px] flex justify-center rounded-xl group/carousel">
+          <div className={`relative w-full flex justify-center rounded-xl group/carousel ${
+            isMobileApp ? 'min-h-[400px] sm:min-h-[600px]' : 'min-h-[180px] sm:min-h-[320px]'
+          }`}>
             <img
               src={displayImages[currentImageIndex]}
               alt={`${title} screenshot ${currentImageIndex + 1}`}
-              className="rounded-xl w-full h-full object-contain max-h-[320px]"
+              className={`rounded-xl object-contain ${
+                isMobileApp ? 'max-h-[600px]' : 'w-full h-full max-h-[320px]'
+              }`}
             />
             
             {/* Carousel Controls - Only show if multiple images */}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { techIconMap } from "./navPages/Projects";
+import { ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
     title: string;
@@ -8,6 +9,8 @@ interface ProjectCardProps {
     thumbnail: string;
     techStack: string[];
     gradient: string;
+    isMobileApp?: boolean;
+    live?: string;
     onClick?: () => void;
 }
 
@@ -17,9 +20,19 @@ export default function ProjectCard({
     thumbnail,
     techStack,
     gradient,
+    isMobileApp = false,
+    live,
     onClick,
 }: ProjectCardProps) {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    // Truncate description if too long
+    const maxLength = 150;
+    const shouldTruncate = description.length > maxLength;
+    const displayDescription = isExpanded || !shouldTruncate 
+        ? description 
+        : description.slice(0, maxLength) + '...';
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -45,7 +58,9 @@ export default function ProjectCard({
     return (
         <div
             onClick={onClick}
-            className="relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 min-h-[350px] md:h-[320px]"
+            className={`relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 ${
+                isExpanded ? 'min-h-[350px] md:min-h-[320px]' : 'min-h-[350px] md:h-[320px]'
+            }`}
             style={{
                 ...(isDarkMode ? lightShadow : darkShadow),
                 background: `radial-gradient(circle at 50% 0%, ${gradient})`,
@@ -57,34 +72,63 @@ export default function ProjectCard({
             {/* Main content - Row layout */}
             <div className="relative z-10 h-full flex flex-col md:flex-row items-stretch p-6 gap-6">
                 {/* Left side - Text content */}
-                <div className="flex-1 flex flex-col justify-between text-white">
-                    <div className="flex-grow">
+                <div className="flex-1 flex flex-col text-white min-h-0">
+                    <div className={`flex-grow ${
+                        isExpanded ? 'mb-4' : ''
+                    }`}>
                         <h2 className="text-2xl md:text-3xl font-bold mb-3">{title}</h2>
                         <p className="text-sm md:text-base text-white/90 leading-relaxed"
                            dangerouslySetInnerHTML={{
-                               __html: description.replace(/160\+/g, '<span class="font-bold text-yellow-300">160+</span>')
+                               __html: displayDescription.replace(/160\+/g, '<span class="font-bold text-yellow-300">160+</span>')
                            }}
                         />
+                        {shouldTruncate && (
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsExpanded(!isExpanded);
+                                }}
+                                className="mt-2 text-xs font-semibold text-yellow-300 hover:text-yellow-200 underline transition-colors"
+                            >
+                                {isExpanded ? 'Show Less' : 'Read More'}
+                            </button>
+                        )}
                     </div>
 
-                    {/* Tech stack at bottom */}
-                    <div className="flex gap-2 mt-6 flex-wrap">
-                        {techStack.map((tech, index) => (
-                            <div
-                                key={index}
-                                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center text-[20px] md:text-[24px] shadow-lg transition-transform duration-300 hover:scale-110 relative group/tech"
-                                title={tech.charAt(0).toUpperCase() + tech.slice(1)}
-                            >
-                                {techIconMap[tech] || null}
-                                {/* Tooltip */}
-                                <div className="absolute bottom-full mb-2 px-2 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover/tech:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-                                    {tech === 'ts' ? 'TypeScript' : 
-                                     tech === 'api' ? 'API' : 
-                                     tech === 'jwt' ? 'JWT' : 
-                                     tech.charAt(0).toUpperCase() + tech.slice(1)}
+                    {/* Tech stack and Live Preview button at bottom */}
+                    <div className="flex items-center justify-between mt-auto pt-4 flex-shrink-0 gap-4">
+                        {/* Tech stack */}
+                        <div className="flex gap-2 flex-wrap">
+                            {techStack.map((tech, index) => (
+                                <div
+                                    key={index}
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white dark:bg-neutral-900 flex items-center justify-center text-[20px] md:text-[24px] shadow-lg transition-transform duration-300 hover:scale-110 relative group/tech"
+                                    title={tech.charAt(0).toUpperCase() + tech.slice(1)}
+                                >
+                                    {techIconMap[tech] || null}
+                                    {/* Tooltip */}
+                                    <div className="absolute bottom-full mb-2 px-2 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover/tech:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                                        {tech === 'ts' ? 'TypeScript' : 
+                                         tech === 'api' ? 'API' : 
+                                         tech === 'jwt' ? 'JWT' : 
+                                         tech.charAt(0).toUpperCase() + tech.slice(1)}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        {/* Live Preview Button */}
+                        {live && live !== '#' && (
+                            <a
+                                href={live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 backdrop-blur-sm font-semibold px-3 py-2 text-xs rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                            >
+                                <ExternalLink size={14} /> Live
+                            </a>
+                        )}
                     </div>
                 </div>
 

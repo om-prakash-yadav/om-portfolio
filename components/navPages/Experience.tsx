@@ -10,8 +10,8 @@ const experiences = [
     location: "Hyderabad, India",
     logo: "https://www.google.com/s2/favicons?domain=deloitte.com&sz=128",
     responsibilities: [
-      "Built scalable modules for Henry Schein Global E-commerce Platform (GEP) using Angular, Bootstrap, and Sitecore, supporting 1M+ global customers and 300+ clinical solutions.",
-      "Optimized API integrations and reusable components, boosting UI performance by 25% and cutting development effort by 30%.",
+      "Worked on pricing, promotions, and order flow for Henry Schein Global E-commerce Platform (GEP) using Angular, Bootstrap, and Sitecore, supporting 1M+ global customers and 300+ clinical solutions.",
+      "Built reusable components as per design system in Figma, boosting UI performance by 25% and cutting development effort by 30%.",
       "Received two awards for exceptional delivery and innovation in the Henry Schein GEP project."
     ],
     technologies: ["Angular", "Bootstrap", "Sitecore", "React.js", "Redux", "TypeScript", "REST APIs"],
