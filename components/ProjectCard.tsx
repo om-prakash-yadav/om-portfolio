@@ -59,7 +59,7 @@ export default function ProjectCard({
         <div
             onClick={onClick}
             className={`relative cursor-pointer border-[10px] dark:border-slate-900 rounded-xl overflow-hidden group transition-all duration-300 ${
-                isExpanded ? 'min-h-[350px] md:min-h-[320px]' : 'min-h-[350px] md:h-[320px]'
+                isExpanded ? 'min-h-[400px] md:min-h-[380px]' : 'min-h-[400px] md:min-h-[360px]'
             }`}
             style={{
                 ...(isDarkMode ? lightShadow : darkShadow),

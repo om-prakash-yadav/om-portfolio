@@ -4,8 +4,8 @@ import ProjectCard from "../ProjectCard";
 import ProjectModal from "../ProjectModal"; // ⬅️ You must have this file
 import { jetbrainsMono } from "@/app/font";
 
-import { FaReact, FaAngular } from "react-icons/fa";
-import { SiTypescript, SiRedux, SiFlutter, SiDart, SiBootstrap, SiSitecore } from "react-icons/si";
+import { FaReact, FaAngular, FaNodeJs } from "react-icons/fa";
+import { SiTypescript, SiRedux, SiFlutter, SiDart, SiBootstrap, SiSitecore, SiMongodb, SiExpress } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
 export const techIconMap: Record<string, JSX.Element> = {
@@ -19,9 +19,29 @@ export const techIconMap: Record<string, JSX.Element> = {
   dart: <SiDart className="text-blue-500" />,
   bootstrap: <SiBootstrap className="text-purple-600" />,
   sitecore: <SiSitecore className="text-red-500" />,
+  mongodb: <SiMongodb className="text-green-500" />,
+  nodejs: <FaNodeJs className="text-green-600" />,
+  express: <SiExpress className="text-gray-600" />,
 };
 
 const projects = [
+  {
+    title: "Hospital Management System",
+    description: "Full-stack MERN application for hospital management enabling patients to book appointments, access medical reports online, and view doctor information. Built with React and Redux Thunk for state management, Node.js and Express.js backend, MongoDB database, JWT authentication, and Bootstrap UI. Features include appointment scheduling, online report access, and comprehensive hospital information.",
+    thumbnail: "https://user-images.githubusercontent.com/100460788/215819644-9abea62e-87aa-4fc9-9dbb-2dec52ea1c65.png",
+    images: [
+      "https://user-images.githubusercontent.com/100460788/215819644-9abea62e-87aa-4fc9-9dbb-2dec52ea1c65.png",
+      "https://user-images.githubusercontent.com/100460788/215819655-f6bba72e-2fb0-4487-af0c-cc692c86cfa1.png",
+      "https://user-images.githubusercontent.com/100460788/215819662-c8a1ca12-d7f3-465b-b0dd-22f6361777ae.png",
+      "https://user-images.githubusercontent.com/100460788/215819659-ddf130ff-97b1-4a22-9f2b-0d561cff2630.png",
+      "https://user-images.githubusercontent.com/100460788/215819675-274806ae-eb74-4ac0-bce4-51c9ede2bc7f.png",
+      "https://user-images.githubusercontent.com/100460788/215819668-9e12eb1b-412f-4f27-b4ee-0eb807a19d2a.png",
+    ],
+    techStack: ["react", "redux", "nodejs", "express", "mongodb", "jwt", "bootstrap"],
+    gradient: "#10b981, #059669",
+    github: "https://github.com/om-prakash-yadav/Hospital-Management-System-User-Side",
+    live: "https://hospital-management-system-user-sid.vercel.app/",
+  },
   {
     title: "Liquid Glass Nav",
     description: "A highly customizable Flutter package for creating stunning glassmorphism bottom navigation bars with 160+ downloads on pub.dev. Features smooth animations, haptic feedback, badge support, and multiple animation types.",
