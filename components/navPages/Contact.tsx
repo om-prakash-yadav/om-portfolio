@@ -9,7 +9,7 @@ export default function Contact() {
 
   const socialLinks = [
     { icon: Github, href: "https://github.com/om-prakash-yadav", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/om-prakash-yadav", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/omprakash-nitdgp/", label: "LinkedIn" },
     { icon: Twitter, href: "https://twitter.com/itsme_omprakash", label: "Twitter" },
   ];
 
