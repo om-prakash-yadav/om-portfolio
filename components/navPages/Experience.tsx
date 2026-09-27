@@ -11,7 +11,8 @@ const experiences = [
     logo: "/tessell.svg",
     logoBg: "bg-[#0b1026] border-[#0b1026]",
     responsibilities: [
-      "Building Tessell's AI-powered CloudOps desktop app (Tauri + Rust + React/TypeScript), with 370+ commits across the React frontend and the Rust backend.",
+      "Build full-stack features for Tessell's AI-powered Tauri cloud-operations desktop app spanning 28 AWS services, owning the React/TypeScript UI and Rust services (370+ commits).",
+      "Designed AI agents for SRE and DBA workflows that automate incident linkage, deployment tracking and reliability reports; ranked #1 for Most Ships to Production and 3rd overall in Tessell's company-wide hackathon.",
       "Owned the end-to-end onboarding flow: pre-login tool checks with Homebrew detection and auto-resume, AWS/Azure profile auto-discovery, per-provider cloud setup, resumable steps, and a code-signed Python 3.11 runtime bundled with the app and extracted silently on first launch.",
       "Built the Cloud Estate browser: a profile index with per-profile refresh, rebuild and live scan progress, and an interactive force-graph network topology with neighbourhood highlighting, focus-on-select, animated edges, service glyphs, filter chips and light/dark canvas themes.",
       "Shipped OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack, moved integration tokens from plaintext JSON into the OS keychain, and added an LLM-driven integration-analysis phase.",
@@ -19,36 +20,37 @@ const experiences = [
       "Delivered the Knowledge Base UI with streaming chat, kept chat SSE streams alive across navigation, and made the scheduler run a full estate re-scan after every app update.",
       "Contributed to the shared React design system and added WebDriver hooks for automated end-to-end UI testing."
     ],
-    technologies: ["React.js", "TypeScript", "Tauri", "Rust", "Zustand", "SSE", "OAuth 2.0", "AWS", "Azure", "Python", "Vite"],
+    technologies: ["React.js", "TypeScript", "Tauri", "Rust", "AWS", "Azure", "AI Agents", "LLMs", "OAuth 2.0", "SSE", "Zustand"],
     color: "from-orange-500 to-red-500"
   },
   {
     role: "Software Engineer",
     company: "Deloitte USI",
-    duration: "Jul 2024 – Mar 2026",
+    duration: "Jul 2024 – Feb 2026",
     location: "Hyderabad, India",
     logo: "https://www.google.com/s2/favicons?domain=deloitte.com&sz=128",
     responsibilities: [
-      "Worked on pricing, promotions, and order flow for Henry Schein Global E-commerce Platform (GEP) using Angular, Bootstrap, and Sitecore, supporting 1M+ global customers and 300+ clinical solutions.",
-      "Built reusable components as per design system in Figma, boosting UI performance by 25% and cutting development effort by 30%.",
-      "Received two awards for exceptional delivery and innovation in the Henry Schein GEP project."
+      "Developed full-stack modules for Henry Schein's healthcare suite, serving 1M+ customers across 300+ clinical solutions.",
+      "Built and optimized Node.js/Express.js REST APIs with JWT-secured, HIPAA-ready authentication for healthcare data.",
+      "Translated UI/UX wireframes into reusable React.js components (Hooks, Redux, Context API), cutting load times by 25%, development effort by 30% and new-developer onboarding time by 40%.",
+      "Improved Core Web Vitals (LCP, FID, CLS) by 20% through performance monitoring, profiling and debugging.",
+      "Received Applause and Spot Awards for innovation and client delivery."
     ],
-    technologies: ["Angular", "Bootstrap", "Sitecore", "React.js", "Redux", "TypeScript", "REST APIs"],
+    technologies: ["Node.js", "Express.js", "React.js", "Redux", "TypeScript", "JWT", "REST APIs", "Agile/Scrum"],
     color: "from-blue-500 to-cyan-500"
   },
   {
-    role: "Software Engineer (Part-Time)",
+    role: "Software Developer Intern",
     company: "TetraTrion Technologies Pvt. Ltd.",
-    duration: "Sep 2023 – Jul 2024",
+    duration: "Aug 2023 – Jul 2024",
     location: "Bhubaneswar, India",
     logo: "https://www.google.com/s2/favicons?domain=tetratrion.com&sz=128",
     logoBg: "bg-slate-900 border-slate-900",
     responsibilities: [
-      "Developed and delivered responsive, client-facing dashboards using React.js and Apache ECharts.",
-      "Integrated RESTful APIs and built reusable UI components for scalable frontend architecture.",
-      "Collaborated with cross-functional teams to deliver high-quality solutions on time."
+      "Developed client-facing dashboards for Digi Ubique's industrial clients, building Node.js REST APIs for React/ECharts UIs.",
+      "Built reusable UI components and integrated RESTful APIs across multiple client projects."
     ],
-    technologies: ["React.js", "Apache ECharts", "REST APIs"],
+    technologies: ["Node.js", "React.js", "Apache ECharts", "REST APIs"],
     color: "from-purple-500 to-pink-500"
   }
 ];

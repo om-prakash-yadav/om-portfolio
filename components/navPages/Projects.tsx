@@ -127,9 +127,9 @@ const projects: ShowcaseProject[] = [
   },
   {
     title: "Henry Schein Global E-commerce Platform (GEP)",
-    description: "Deloitte USI project: Worked on pricing, promotions, and order flow for Henry Schein's Global E-commerce Platform using Angular, Bootstrap, and Sitecore. Built reusable components as per design system in Figma. Supported 1M+ global customers across 300+ clinical solutions. Received two awards for exceptional delivery.",
+    description: "Deloitte USI project: full-stack modules for Henry Schein's healthcare suite, serving 1M+ customers across 300+ clinical solutions. Node.js/Express.js REST APIs with JWT-secured, HIPAA-ready authentication, and reusable React.js components that cut load times by 25% and new-developer onboarding by 40%. Recognised with Applause and Spot Awards.",
     thumbnail: "/henry-schein.png",
-    techStack: ["angular", "bootstrap", "sitecore"],
+    techStack: ["react", "redux", "nodejs", "express", "jwt"],
     gradient: "#51fbfb, rgb(13, 1, 60)",
     github: "https://github.com/om-prakash-yadav",
     live: "#",

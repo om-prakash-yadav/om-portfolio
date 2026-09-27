@@ -16,7 +16,7 @@ import BackgroundScene from "@/components/three/BackgroundScene";
 
 export const metadata: Metadata = {
   title: "Om Prakash Yadav | Portfolio",
-  description: "MTS 2 at Tessell - React.js, TypeScript, Tauri, Rust Developer",
+  description: "Full-Stack Software Engineer, MTS 2 at Tessell - React, TypeScript, Node.js, Rust and AI agents",
   
 };
 

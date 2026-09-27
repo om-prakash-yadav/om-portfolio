@@ -1,7 +1,7 @@
 "use client";
-import { FaGitAlt, FaGithub, FaReact, FaAngular, FaSass, FaFigma, FaBootstrap, FaNodeJs } from "react-icons/fa";
+import { FaGitAlt, FaGithub, FaReact, FaAngular, FaSass, FaFigma, FaBootstrap, FaNodeJs, FaJava, FaAws, FaDocker } from "react-icons/fa";
 import { RiCss3Fill, RiHtml5Fill, RiTailwindCssFill, RiNextjsFill, RiFlutterFill } from "react-icons/ri";
-import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable, SiMongodb, SiExpress, SiMongoose, SiRust, SiTauri, SiPython } from "react-icons/si";
+import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable, SiMongodb, SiExpress, SiMongoose, SiRust, SiTauri, SiPython, SiPostgresql, SiSpringboot, SiKubernetes, SiTerraform, SiOpenai, SiAnthropic, SiLangchain, SiRedis } from "react-icons/si";
 import { TbApi, TbBrandReactNative } from "react-icons/tb";
 import SkillCard from "../SkillCard";
 import { jetbrainsMono } from "@/app/font";
@@ -12,6 +12,7 @@ const skillCategories = [
         skills: [
             { name: "JavaScript (ES6+)", icon: <SiJavascript />, hoverColor: "group-hover:text-yellow-400" },
             { name: "TypeScript", icon: <SiTypescript />, hoverColor: "group-hover:text-sky-500" },
+            { name: "Java", icon: <FaJava />, hoverColor: "group-hover:text-red-500" },
             { name: "HTML5", icon: <RiHtml5Fill />, hoverColor: "group-hover:text-orange-500" },
             { name: "CSS3", icon: <RiCss3Fill />, hoverColor: "group-hover:text-blue-500" },
         ]
@@ -30,11 +31,31 @@ const skillCategories = [
         skills: [
             { name: "Node.js", icon: <FaNodeJs />, hoverColor: "group-hover:text-green-600" },
             { name: "Express.js", icon: <SiExpress />, hoverColor: "group-hover:text-gray-600 dark:group-hover:text-white" },
+            { name: "Spring Boot", icon: <SiSpringboot />, hoverColor: "group-hover:text-green-500" },
+            { name: "PostgreSQL", icon: <SiPostgresql />, hoverColor: "group-hover:text-sky-600" },
+            { name: "Redis", icon: <SiRedis />, hoverColor: "group-hover:text-red-500" },
             { name: "MongoDB", icon: <SiMongodb />, hoverColor: "group-hover:text-green-500" },
             { name: "Mongoose", icon: <SiMongoose />, hoverColor: "group-hover:text-red-800" },
             { name: "REST APIs", icon: <TbApi />, hoverColor: "group-hover:text-blue-400" },
             { name: "Rust", icon: <SiRust />, hoverColor: "group-hover:text-orange-600" },
             { name: "Python", icon: <SiPython />, hoverColor: "group-hover:text-yellow-500" },
+        ]
+    },
+    {
+        title: "AI & LLMs",
+        skills: [
+            { name: "OpenAI", icon: <SiOpenai />, hoverColor: "group-hover:text-emerald-500" },
+            { name: "Claude", icon: <SiAnthropic />, hoverColor: "group-hover:text-orange-400" },
+            { name: "LangChain", icon: <SiLangchain />, hoverColor: "group-hover:text-teal-500" },
+        ]
+    },
+    {
+        title: "Cloud & DevOps",
+        skills: [
+            { name: "AWS", icon: <FaAws />, hoverColor: "group-hover:text-amber-500" },
+            { name: "Docker", icon: <FaDocker />, hoverColor: "group-hover:text-sky-500" },
+            { name: "Kubernetes", icon: <SiKubernetes />, hoverColor: "group-hover:text-blue-500" },
+            { name: "Terraform", icon: <SiTerraform />, hoverColor: "group-hover:text-violet-500" },
         ]
     },
     {

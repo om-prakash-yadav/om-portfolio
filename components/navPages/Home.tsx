@@ -50,7 +50,7 @@ export function Home() {
                     <span data-hero-reveal className="tailwind-wrapper mt-4 text-lg sm:text-3xl font-medium block text-left text-zinc-800 dark:text-zinc-200">
                         <Typewriter
                             options={{
-                                strings: ['SOFTWARE ENGINEER', 'REACT DEVELOPER', 'FRONTEND SPECIALIST'],
+                                strings: ['FULL-STACK SOFTWARE ENGINEER', 'MTS 2 @ TESSELL', 'BUILDING AI AGENTS'],
                                 autoStart: true,
                                 loop: true,
                                 delay: 20,
