@@ -29,15 +29,15 @@ export const techIconMap: Record<string, JSX.Element> = {
 
 const projects: ShowcaseProject[] = [
   {
-    title: "Escher - AI CloudOps Desktop App (Tessell)",
-    description: "Tessell's AI-powered CloudOps desktop app for AWS and Azure, built with Tauri, Rust and React/TypeScript. Users ask questions about their cloud estate in chat, and Escher answers from live queries or a synced inventory of resources. I built the onboarding flow with automatic profile discovery and a bundled Python runtime; the Cloud Estate browser with per-profile scanning, a resource list grouped like the AWS console and an interactive network topology; OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack with tokens in the OS keychain; and step-by-step runbook execution for cloud findings.",
-    thumbnail: "/escher/estate.webp",
+    title: "AI CloudOps Desktop App (Tessell)",
+    description: "Tessell's AI-powered CloudOps desktop app for AWS and Azure, built with Tauri, Rust and React/TypeScript. Users ask questions about their cloud estate in chat, and the app answers from live queries or a synced inventory of resources. I built the onboarding flow with automatic profile discovery and a bundled Python runtime; the Cloud Estate browser with per-profile scanning, a resource list grouped like the AWS console and an interactive network topology; OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack with tokens in the OS keychain; and step-by-step runbook execution for cloud findings.",
+    thumbnail: "/cloudops/estate.webp",
     images: [
-      "/escher/home.webp",
-      "/escher/estate.webp",
-      "/escher/resources.webp",
-      "/escher/topology.webp",
-      "/escher/chat.webp",
+      "/cloudops/home.webp",
+      "/cloudops/estate.webp",
+      "/cloudops/resources.webp",
+      "/cloudops/topology.webp",
+      "/cloudops/chat.webp",
     ],
     techStack: ["react", "ts", "tauri", "rust", "python"],
     gradient: "#2ab4e7, #0b1026",

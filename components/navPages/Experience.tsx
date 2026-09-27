@@ -11,7 +11,7 @@ const experiences = [
     logo: "/tessell.svg",
     logoBg: "bg-[#0b1026] border-[#0b1026]",
     responsibilities: [
-      "Building Escher, Tessell's AI-powered CloudOps desktop app (Tauri + Rust + React/TypeScript), with 370+ commits across the React frontend and the Rust backend.",
+      "Building Tessell's AI-powered CloudOps desktop app (Tauri + Rust + React/TypeScript), with 370+ commits across the React frontend and the Rust backend.",
       "Owned the end-to-end onboarding flow: pre-login tool checks with Homebrew detection and auto-resume, AWS/Azure profile auto-discovery, per-provider cloud setup, resumable steps, and a code-signed Python 3.11 runtime bundled with the app and extracted silently on first launch.",
       "Built the Cloud Estate browser: a profile index with per-profile refresh, rebuild and live scan progress, and an interactive force-graph network topology with neighbourhood highlighting, focus-on-select, animated edges, service glyphs, filter chips and light/dark canvas themes.",
       "Shipped OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack, moved integration tokens from plaintext JSON into the OS keychain, and added an LLM-driven integration-analysis phase.",
