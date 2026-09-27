@@ -8,7 +8,7 @@ Welcome to my portfolio website showcasing my journey as a Software Engineer and
 
 ## 📌 About Me
 
-Hey, I'm **Om Prakash Yadav**, a Software Engineer based in Hyderabad, India. I specialize in building modern web and mobile applications with a focus on React, Angular, and Flutter. I'm passionate about creating beautiful, functional interfaces and delivering scalable solutions.
+Hey, I'm **Om Prakash Yadav**, a Member of Technical Staff 2 (MTS 2) at **Tessell** based in Bangalore, India, building Escher — an AI-powered CloudOps desktop app — with React, TypeScript, Tauri and Rust. Previously at Deloitte USI. I specialize in building modern web, desktop and mobile applications with React, Angular, and Flutter. I'm passionate about creating beautiful, functional interfaces and delivering scalable solutions.
 
 My expertise spans across the full frontend ecosystem, from React and Next.js to Angular and Flutter, with a strong foundation in TypeScript and modern development practices.
 

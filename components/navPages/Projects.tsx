@@ -1,11 +1,11 @@
 import { Heart, Shield } from "lucide-react";
 import React, { JSX, useState } from "react";
-import ProjectCard from "../ProjectCard";
+import ProjectShowcase, { type ShowcaseProject } from "../ProjectShowcase";
 import ProjectModal from "../ProjectModal"; // ⬅️ You must have this file
 import { jetbrainsMono } from "@/app/font";
 
 import { FaReact, FaAngular, FaNodeJs } from "react-icons/fa";
-import { SiTypescript, SiRedux, SiFlutter, SiDart, SiBootstrap, SiSitecore, SiMongodb, SiExpress } from "react-icons/si";
+import { SiTypescript, SiRust, SiTauri, SiPython, SiRedux, SiFlutter, SiDart, SiBootstrap, SiSitecore, SiMongodb, SiExpress } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 
 export const techIconMap: Record<string, JSX.Element> = {
@@ -22,9 +22,26 @@ export const techIconMap: Record<string, JSX.Element> = {
   mongodb: <SiMongodb className="text-green-500" />,
   nodejs: <FaNodeJs className="text-green-600" />,
   express: <SiExpress className="text-gray-600" />,
+  tauri: <SiTauri className="text-amber-400" />,
+  rust: <SiRust className="text-orange-600" />,
+  python: <SiPython className="text-yellow-500" />,
 };
 
-const projects = [
+const projects: ShowcaseProject[] = [
+  {
+    title: "Escher - AI CloudOps Desktop App (Tessell)",
+    description: "Tessell's AI-powered CloudOps desktop app for AWS and Azure, built with Tauri, Rust and React/TypeScript. Users ask questions about their cloud estate in chat, and Escher answers from live queries or a synced inventory of resources. I built the onboarding flow with automatic profile discovery and a bundled Python runtime; the Cloud Estate browser with per-profile scanning, a resource list grouped like the AWS console and an interactive network topology; OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack with tokens in the OS keychain; and step-by-step runbook execution for cloud findings.",
+    thumbnail: "/escher/estate.webp",
+    images: [
+      "/escher/home.webp",
+      "/escher/estate.webp",
+      "/escher/resources.webp",
+      "/escher/topology.webp",
+      "/escher/chat.webp",
+    ],
+    techStack: ["react", "ts", "tauri", "rust", "python"],
+    gradient: "#2ab4e7, #0b1026",
+  },
   {
     title: "Hospital Management System",
     description: "Full-stack MERN application for hospital management enabling patients to book appointments, access medical reports online, and view doctor information. Built with React and Redux Thunk for state management, Node.js and Express.js backend, MongoDB database, JWT authentication, and Bootstrap UI. Features include appointment scheduling, online report access, and comprehensive hospital information.",
@@ -120,30 +137,22 @@ const projects = [
 ];
 
 export function Projects() {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<ShowcaseProject | null>(null);
 
   return (
-    <div id="projects" className={`  ${jetbrainsMono.className} flex flex-col gap-10 items-center justify-center px-4 pb-20 w-full max-w-4xl`}>
+    <div id="projects" className={`${jetbrainsMono.className} flex flex-col gap-10 items-center justify-center pb-20 w-full`}>
       {/* Header */}
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="flex gap-2 text-[#e8390d]">
           Made with <Heart />
         </p>
-        <h1 className="text-4xl md:text-6xl text-center font-bold">
+        <h1 data-3d-heading className="text-4xl md:text-6xl text-center font-bold">
           My Projects
         </h1>
       </div>
 
       {/* Cards */}
-      <div className={`${jetbrainsMono.className} flex flex-col gap-6 w-full `}>
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            {...project}
-            onClick={() => setSelectedProject(project)}
-          />
-        ))}
-      </div>
+      <ProjectShowcase projects={projects} onOpen={setSelectedProject} />
 
       {/* Modal */}
       {selectedProject && (

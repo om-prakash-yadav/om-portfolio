@@ -10,11 +10,13 @@ import Preloader from "@/components/Preloader";
 import { LightPullThemeSwitcher } from "@/components/ui/light-pull-theme-switcher";
 import { Cursor } from "@/components/ui/Cursor";
 import { Toaster } from "sonner";
+import SmoothScroll from "@/components/SmoothScroll";
+import BackgroundScene from "@/components/three/BackgroundScene";
 
 
 export const metadata: Metadata = {
   title: "Om Prakash Yadav | Portfolio",
-  description: "Software Engineer at Deloitte USI - React.js, TypeScript, Angular Developer",
+  description: "MTS 2 at Tessell - React.js, TypeScript, Tauri, Rust Developer",
   
 };
 
@@ -33,6 +35,8 @@ export default function RootLayout({
           <Cursor />
           {/* <ThemeToggle /> */}
           <LightPullThemeSwitcher />
+          <SmoothScroll />
+          <BackgroundScene />
           <Preloader />
           <ScrollProgress />
           <Navbar />

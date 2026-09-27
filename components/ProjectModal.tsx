@@ -14,8 +14,8 @@ interface ProjectModalProps {
   images?: string[];
   techStack: string[];
   gradient: string;
-  github: string;
-  live: string;
+  github?: string;
+  live?: string;
   isMobileApp?: boolean;
   onClose: () => void;
 }
@@ -76,6 +76,7 @@ export default function ProjectModal({
         tiltMaxAngleX={10}
         tiltMaxAngleY={10}
         glareEnable={false}
+        data-lenis-prevent
         className="relative w-full max-w-5xl max-h-[90vh] rounded-xl overflow-y-auto overflow-x-hidden group transition-all duration-300 scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent"
         style={{
           ...(isDarkMode ? lightShadow : darkShadow),
@@ -157,22 +158,26 @@ export default function ProjectModal({
           {/* Links & Tech Stack */}
           <div className="flex flex-col md:flex-row items-center justify-between mt-2 gap-3">
             <div className="flex flex-wrap justify-center sm:justify-start gap-2">
-              <a
-                href={live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 bg-black font-semibold px-3 py-1.5 text-sm rounded-3xl hover:opacity-80 transition"
-              >
-                <ExternalLink size={16} /> Live Preview
-              </a>
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 bg-black font-semibold px-3 py-1.5 text-sm rounded-3xl hover:opacity-80 transition"
-              >
-                <FiGithub size={16} /> GitHub
-              </a>
+              {live && live !== '#' && (
+                <a
+                  href={live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-black font-semibold px-3 py-1.5 text-sm rounded-3xl hover:opacity-80 transition"
+                >
+                  <ExternalLink size={16} /> Live Preview
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-black font-semibold px-3 py-1.5 text-sm rounded-3xl hover:opacity-80 transition"
+                >
+                  <FiGithub size={16} /> GitHub
+                </a>
+              )}
             </div>
 
             <div className="flex justify-center md:justify-end transition-all duration-500">

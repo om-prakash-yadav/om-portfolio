@@ -18,7 +18,7 @@ export default function Contact() {
       <div className="mx-auto text-center max-w-4xl w-full">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+          <h2 data-3d-block className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
             Let's Connect
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">

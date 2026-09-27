@@ -1,7 +1,7 @@
 "use client";
 import { FaGitAlt, FaGithub, FaReact, FaAngular, FaSass, FaFigma, FaBootstrap, FaNodeJs } from "react-icons/fa";
 import { RiCss3Fill, RiHtml5Fill, RiTailwindCssFill, RiNextjsFill, RiFlutterFill } from "react-icons/ri";
-import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable, SiMongodb, SiExpress, SiMongoose } from "react-icons/si";
+import { SiRedux, SiNodedotjs, SiTypescript, SiJavascript, SiWebpack, SiVite, SiJest, SiReacttable, SiMongodb, SiExpress, SiMongoose, SiRust, SiTauri, SiPython } from "react-icons/si";
 import { TbApi, TbBrandReactNative } from "react-icons/tb";
 import SkillCard from "../SkillCard";
 import { jetbrainsMono } from "@/app/font";
@@ -33,13 +33,16 @@ const skillCategories = [
             { name: "MongoDB", icon: <SiMongodb />, hoverColor: "group-hover:text-green-500" },
             { name: "Mongoose", icon: <SiMongoose />, hoverColor: "group-hover:text-red-800" },
             { name: "REST APIs", icon: <TbApi />, hoverColor: "group-hover:text-blue-400" },
+            { name: "Rust", icon: <SiRust />, hoverColor: "group-hover:text-orange-600" },
+            { name: "Python", icon: <SiPython />, hoverColor: "group-hover:text-yellow-500" },
         ]
     },
     {
-        title: "Mobile Development",
+        title: "Mobile & Desktop",
         skills: [
             { name: "React Native", icon: <TbBrandReactNative />, hoverColor: "group-hover:text-cyan-400" },
             { name: "Flutter", icon: <RiFlutterFill />, hoverColor: "group-hover:text-blue-400" },
+            { name: "Tauri", icon: <SiTauri />, hoverColor: "group-hover:text-amber-400" },
         ]
     },
     {
@@ -66,7 +69,7 @@ export default function SkillsSection() {
     return (
         <section id="skills" className={` ${jetbrainsMono.className} flex flex-col gap-10 py-16 px-4`}>
             <div className="flex flex-col items-center justify-center gap-2">
-                <h1 className="text-4xl md:text-6xl text-center font-bold">
+                <h1 data-3d-heading className="text-4xl md:text-6xl text-center font-bold">
                     My Skills
                 </h1>
                 <p className="text-muted-foreground text-center mt-2">
@@ -75,13 +78,15 @@ export default function SkillsSection() {
             </div>
             <div className="max-w-6xl mx-auto w-full space-y-12">
                 {skillCategories.map((category, categoryIndex) => (
-                    <div key={categoryIndex} className="space-y-6">
+                    <div key={categoryIndex} data-3d-skill-group className="space-y-6">
                         <h2 className="text-2xl font-semibold text-center text-[#e8390d]">
                             {category.title}
                         </h2>
                         <div className="flex flex-wrap gap-6 items-center justify-center">
                             {category.skills.map((skill, skillIndex) => (
-                                <SkillCard key={skillIndex} {...skill} />
+                                <div key={skillIndex} data-3d-skill>
+                                    <SkillCard {...skill} />
+                                </div>
                             ))}
                         </div>
                     </div>

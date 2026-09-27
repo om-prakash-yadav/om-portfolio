@@ -4,9 +4,28 @@ import { jetbrainsMono } from "@/app/font";
 
 const experiences = [
   {
+    role: "Member of Technical Staff 2 (MTS 2)",
+    company: "Tessell",
+    duration: "Mar 2026 – Present",
+    location: "Bangalore, India",
+    logo: "/tessell.svg",
+    logoBg: "bg-[#0b1026] border-[#0b1026]",
+    responsibilities: [
+      "Building Escher, Tessell's AI-powered CloudOps desktop app (Tauri + Rust + React/TypeScript), with 370+ commits across the React frontend and the Rust backend.",
+      "Owned the end-to-end onboarding flow: pre-login tool checks with Homebrew detection and auto-resume, AWS/Azure profile auto-discovery, per-provider cloud setup, resumable steps, and a code-signed Python 3.11 runtime bundled with the app and extracted silently on first launch.",
+      "Built the Cloud Estate browser: a profile index with per-profile refresh, rebuild and live scan progress, and an interactive force-graph network topology with neighbourhood highlighting, focus-on-select, animated edges, service glyphs, filter chips and light/dark canvas themes.",
+      "Shipped OAuth integrations for GitHub, Google Drive, Jira, Linear and Slack, moved integration tokens from plaintext JSON into the OS keychain, and added an LLM-driven integration-analysis phase.",
+      "Built gated step-by-step runbook execution for cloud findings, with parameter-edit retries, execution history, a no-impact dry-run mode and automatic resume after AWS SSO re-authentication.",
+      "Delivered the Knowledge Base UI with streaming chat, kept chat SSE streams alive across navigation, and made the scheduler run a full estate re-scan after every app update.",
+      "Contributed to the shared React design system and added WebDriver hooks for automated end-to-end UI testing."
+    ],
+    technologies: ["React.js", "TypeScript", "Tauri", "Rust", "Zustand", "SSE", "OAuth 2.0", "AWS", "Azure", "Python", "Vite"],
+    color: "from-orange-500 to-red-500"
+  },
+  {
     role: "Software Engineer",
     company: "Deloitte USI",
-    duration: "Jul 2024 – Present",
+    duration: "Jul 2024 – Mar 2026",
     location: "Hyderabad, India",
     logo: "https://www.google.com/s2/favicons?domain=deloitte.com&sz=128",
     responsibilities: [
@@ -23,6 +42,7 @@ const experiences = [
     duration: "Sep 2023 – Jul 2024",
     location: "Bhubaneswar, India",
     logo: "https://www.google.com/s2/favicons?domain=tetratrion.com&sz=128",
+    logoBg: "bg-slate-900 border-slate-900",
     responsibilities: [
       "Developed and delivered responsive, client-facing dashboards using React.js and Apache ECharts.",
       "Integrated RESTful APIs and built reusable UI components for scalable frontend architecture.",
@@ -97,7 +117,7 @@ export default function Experience() {
       {/* Professional Experience Section */}
       <section id="experience" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
-          <h1 className="text-4xl md:text-6xl text-center font-bold">
+          <h1 data-3d-heading className="text-4xl md:text-6xl text-center font-bold">
             Experience
           </h1>
           <p className="text-muted-foreground text-center mt-2">
@@ -121,14 +141,14 @@ export default function Experience() {
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#e8390d] rounded-full border-4 border-background z-10"></div>
 
                 {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+                <div data-3d-card data-side={index % 2 === 0 ? "left" : "right"} className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
                   <div className="group relative bg-card dark:bg-card bg-gray-50/80 border border-border/50 rounded-2xl p-6 hover:p-8 hover:shadow-xl hover:border-[#e8390d]/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden cursor-pointer">
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${exp.color} rounded-t-2xl`}></div>
                     
                     <div className="flex items-start gap-4 mb-4 md:group-hover:mb-6 transition-all duration-500">
                       {exp.logo ? (
-                        <div className="p-2 group-hover:p-3 rounded-xl flex items-center justify-center min-w-[50px] group-hover:min-w-[60px] h-[50px] group-hover:h-[60px] transition-all duration-500">
+                        <div className={`p-2 group-hover:p-3 rounded-xl border ${exp.logoBg ?? "bg-white border-border"} flex items-center justify-center min-w-[50px] group-hover:min-w-[60px] h-[50px] group-hover:h-[60px] transition-all duration-500`}>
                           <img
                             src={exp.logo}
                             alt={`${exp.company} logo`}
@@ -158,7 +178,7 @@ export default function Experience() {
                     </div>
 
                     {/* Hidden content on hover */}
-                    <div className="max-h-[500px] opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-[500px] md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                    <div className="max-h-none opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-[1200px] md:group-hover:opacity-100 transition-all duration-500 overflow-hidden">
                       <ul className="space-y-3 mb-6 text-sm text-muted-foreground leading-relaxed">
                         {exp.responsibilities.map((resp, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -193,7 +213,7 @@ export default function Experience() {
       {/* Co-Curricular Activities Section */}
       <section id="activities" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
-          <h1 className="text-4xl md:text-6xl text-center font-bold">
+          <h1 data-3d-heading className="text-4xl md:text-6xl text-center font-bold">
             Co-Curricular Activities
           </h1>
           <p className="text-muted-foreground text-center mt-2">
@@ -217,7 +237,7 @@ export default function Experience() {
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#e8390d] rounded-full border-4 border-background z-10"></div>
 
                 {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+                <div data-3d-card data-side={index % 2 === 0 ? "left" : "right"} className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
                   <div className="group relative bg-card dark:bg-card bg-gray-50/80 border border-border/50 rounded-2xl p-6 hover:p-8 hover:shadow-xl hover:border-[#e8390d]/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden cursor-pointer">
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${activity.color} rounded-t-2xl`}></div>
@@ -290,7 +310,7 @@ export default function Experience() {
       {/* Education Section */}
       <section id="education" className="w-full max-w-6xl px-6 pt-8 pb-16 md:py-24 mx-auto">
         <div className="flex flex-col items-center justify-center gap-2 mb-12">
-          <h1 className="text-4xl md:text-6xl text-center font-bold">
+          <h1 data-3d-heading className="text-4xl md:text-6xl text-center font-bold">
             Education
           </h1>
           <p className="text-muted-foreground text-center mt-2">
@@ -314,7 +334,7 @@ export default function Experience() {
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#e8390d] rounded-full border-4 border-background z-10"></div>
 
                 {/* Content */}
-                <div className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+                <div data-3d-card data-side={index % 2 === 0 ? "left" : "right"} className={`flex-1 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
                   <div className="group relative bg-card dark:bg-card bg-gray-50/80 border border-border/50 rounded-2xl p-6 hover:p-8 hover:shadow-xl hover:border-[#e8390d]/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden cursor-pointer">
                     {/* Gradient accent */}
                     <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${edu.color} rounded-t-2xl`}></div>

@@ -11,6 +11,7 @@ import OmImg2 from "@/public/om2.jpg"
 import { MapPin } from 'lucide-react';
 import Socials from '../Socials';
 import { InteractiveHoverButton } from '../ui/interactive-hover-button';
+import Tilt from 'react-parallax-tilt';
 export function Home() {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -26,10 +27,10 @@ export function Home() {
 
     return (
         <div id='home' className="w-full max-w-4xl flex flex-col items-center justify-center px-6 pt-20 pb-16 md:pt-32 md:pb-24 sm:min-h-screen relative">
-            <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 w-full max-w-5xl">
+            <div data-hero-content className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 w-full max-w-5xl">
                 <div className="flex-1">
                     <div className="flex items-center gap-3 flex-wrap">
-                        <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold">
+                        <h1 data-hero-title className="text-3xl sm:text-5xl md:text-6xl font-bold">
                             Hey, I&apos;m <span className='text-[#e8390d] whitespace-nowrap'>Om Prakash Yadav</span>
                         </h1>
                         <span
@@ -44,9 +45,9 @@ export function Home() {
                         >
                         </span>
                     </div>
-                    <p className={` ${jetbrainsMono.className} flex items-center mt-4 text-[#dd431d] gap-2 text-sm sm:text-lg`}> <MapPin className="w-4 h-4" /> Hyderabad, India</p>
+                    <p data-hero-reveal className={` ${jetbrainsMono.className} flex items-center mt-4 text-[#dd431d] gap-2 text-sm sm:text-lg`}> <MapPin className="w-4 h-4" /> Bangalore, India</p>
 
-                    <span className="tailwind-wrapper mt-4 text-lg sm:text-3xl font-medium block text-left text-zinc-800 dark:text-zinc-200">
+                    <span data-hero-reveal className="tailwind-wrapper mt-4 text-lg sm:text-3xl font-medium block text-left text-zinc-800 dark:text-zinc-200">
                         <Typewriter
                             options={{
                                 strings: ['SOFTWARE ENGINEER', 'REACT DEVELOPER', 'FRONTEND SPECIALIST'],
@@ -58,7 +59,7 @@ export function Home() {
                         />
                     </span>
 
-                    <div className="flex flex-wrap gap-4 items-center mt-6">
+                    <div data-hero-reveal className="flex flex-wrap gap-4 items-center mt-6">
                         <Socials />
                         <InteractiveHoverButton onClick={handleDownload} />
                     </div>
@@ -72,6 +73,16 @@ export function Home() {
                 </div>
 
                 {/* Image Section */}
+                <Tilt
+                    className="shrink-0 rounded-full"
+                    tiltMaxAngleX={14}
+                    tiltMaxAngleY={14}
+                    perspective={800}
+                    scale={1.05}
+                    glareEnable
+                    glareMaxOpacity={0.35}
+                    glareBorderRadius="9999px"
+                >
                 <div
                     className="w-48 h-48 sm:w-70 sm:h-70 relative shrink-0 rounded-full overflow-hidden transition-all duration-300"
                     onMouseEnter={() => setIsHovered(true)}
@@ -95,6 +106,7 @@ export function Home() {
                             }`}
                     />
                 </div>
+                </Tilt>
 
             </div>
 

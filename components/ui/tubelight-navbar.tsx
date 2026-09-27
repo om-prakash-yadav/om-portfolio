@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { smoothScrollTo } from "@/lib/smooth-scroll";
 
 interface NavItem {
   name: string;
@@ -84,10 +85,7 @@ export function NavBar({ items, className }: NavBarProps) {
                   const navbarHeight = isContactSection ? 50 : 100;
                   const targetPosition = targetElement.offsetTop - navbarHeight;
                   
-                  window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                  });
+                  smoothScrollTo(targetPosition);
 
                   // Re-enable scroll tracking after smooth scroll completes
                   setTimeout(() => {

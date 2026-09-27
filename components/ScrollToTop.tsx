@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronsUp } from 'lucide-react';
+import { smoothScrollTo } from '@/lib/smooth-scroll';
 
 export default function ScrollToTopBtn() {
   const [showButton, setShowButton] = useState(false);
@@ -17,7 +18,7 @@ export default function ScrollToTopBtn() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    smoothScrollTo(0);
   };
 
   return (
